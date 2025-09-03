@@ -1,0 +1,19 @@
+# 3. Acessibilidade no Android Compose
+
+```kotlin
+Icon(
+    imageVector = Icons.Default.Favorite,
+    contentDescription = "Favorito"
+)
+
+TextField(
+    value = "",
+    onValueChange = {},
+    modifier = Modifier
+        .sizeIn(minWidth = 48.dp, minHeight = 48.dp)
+        .semantics { contentDescription = "Buscar item" }
+)
+```
+
+Use `sizeIn()` para garantir acessibilidade tátil mínima (48x48dp).
+Compatível com TalkBack e VoiceOver

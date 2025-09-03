@@ -1,0 +1,30 @@
+# 2. Compose Best Practices and Essential Modifiers
+
+* Name composables clearly (e.g., `LoginScreen`, `SaveButton`)
+* Separate reusable UI parts into isolated functions
+* Avoid putting complex logic inside composables
+* Use ViewModel for state management
+* Apply `Modifier` for layout, styling, and interaction in a clear, consistent order
+
+**Examples:**
+```kotlin
+Text(
+    text = "Hello",
+    modifier = Modifier
+        .fillMaxWidth()
+        .padding(16.dp)
+)
+
+Column(
+    modifier = Modifier.fillMaxSize(),
+    verticalArrangement = Arrangement.Center,
+    horizontalAlignment = Alignment.CenterHorizontally
+) {
+    Text("Centered Text")
+}
+```
+
+**Tips:**
+- Use `Modifier.padding` for spacing inside elements
+- Use `Modifier.fillMaxSize` or `fillMaxWidth` for responsive layouts
+- Chain modifiers logically: size → padding → background → click

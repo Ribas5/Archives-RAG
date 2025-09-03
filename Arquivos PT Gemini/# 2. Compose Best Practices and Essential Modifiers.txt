@@ -1,0 +1,32 @@
+# 2. Boas práticas do Compose e modificadores essenciais
+
+* Nomeie os composables de forma clara (ex.: `LoginScreen`, `SaveButton`)
+* Separe partes reutilizáveis da UI em funções isoladas
+* Evite colocar lógica complexa dentro de composables
+* Use `ViewModel` para gerenciamento de estado
+* Aplique `Modifier` para layout, estilo e interação em uma ordem clara e consistente
+
+**Exemplos:**
+
+```kotlin
+Text(
+    text = "Olá",
+    modifier = Modifier
+        .fillMaxWidth()
+        .padding(16.dp)
+)
+
+Column(
+    modifier = Modifier.fillMaxSize(),
+    verticalArrangement = Arrangement.Center,
+    horizontalAlignment = Alignment.CenterHorizontally
+) {
+    Text("Texto centralizado")
+}
+```
+
+**Dicas:**
+
+* Use `Modifier.padding` para espaçamento interno dos elementos
+* Use `Modifier.fillMaxSize` ou `fillMaxWidth` para layouts responsivos
+* Encadeie modificadores de forma lógica: tamanho → padding → background → clique
