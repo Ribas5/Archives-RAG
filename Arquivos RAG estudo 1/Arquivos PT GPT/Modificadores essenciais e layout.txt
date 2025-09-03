@@ -1,0 +1,18 @@
+# 3. Modificadores essenciais e layout
+
+```kotlin
+Text(
+    text = "Texto com padding",
+    modifier = Modifier.padding(16.dp)
+)
+
+Column(
+    modifier = Modifier.fillMaxSize(),
+    verticalArrangement = Arrangement.Center,
+    horizontalAlignment = Alignment.CenterHorizontally
+) {
+    // Conteúdo
+}
+```
+
+Use `Modifier.fillMaxWidth()`, `padding()`, `background()`, `sizeIn()` e `semantics {}` conforme necessário.

@@ -1,0 +1,16 @@
+# 5. LazyColumn acessível
+
+```kotlin
+LazyColumn(
+    modifier = Modifier.semantics { contentDescription = "Lista de produtos" }
+) {
+    items(products) { product ->
+        Text(
+            text = product,
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+```
+
+Garanta espaçamento entre os itens e conteúdo acessível.

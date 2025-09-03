@@ -1,0 +1,18 @@
+# 2. Composables básicos e estado reativo
+
+```kotlin
+@Composable
+fun ExemploTexto() {
+    Text(text = "Texto simples")
+}
+
+@Composable
+fun Contador() {
+    var count by rememberSaveable { mutableStateOf(0) }
+    Button(onClick = { count++ }) {
+        Text("Clique: $count")
+    }
+}
+```
+
+Use `rememberSaveable` sempre que o estado precisar sobreviver à recomposição.

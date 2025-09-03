@@ -1,0 +1,45 @@
+# 1. Basic Composables, Reactive State and Project Structure with Jetpack Compose
+
+```kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MyApp()
+        }
+    }
+}
+
+@Composable
+fun MyApp() {
+    Surface(color = MaterialTheme.colorScheme.background) {
+        Greeting("World")
+    }
+}
+
+@Composable
+fun Greeting(name: String) {
+    Text(text = "Hello $name!")
+}
+```
+
+**Reactive State Example:**
+
+```kotlin
+@Composable
+fun Counter() {
+    var count by rememberSaveable { mutableStateOf(0) }
+    Column {
+        Text("Count: $count")
+        Button(onClick = { count++ }) {
+            Text("Increase")
+        }
+    }
+}
+```
+
+**Key Points:**
+- Define a clear `MainActivity` entry point
+- Keep UI modular with reusable composables
+- Use `remember` or `rememberSaveable` for state persistence
+- Organize files by feature for scalability
